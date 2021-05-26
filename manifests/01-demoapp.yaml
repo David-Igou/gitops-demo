@@ -1,0 +1,77 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io/foreground
+  generation: 23
+  managedFields:
+  - apiVersion: argoproj.io/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions: {}
+        f:health:
+          f:status: {}
+        f:reconciledAt: {}
+        f:sync:
+          f:comparedTo:
+            f:destination:
+              f:server: {}
+            f:source:
+              f:path: {}
+              f:repoURL: {}
+              f:targetRevision: {}
+          f:status: {}
+    manager: argocd-application-controller
+    operation: Update
+    time: "2021-05-26T14:34:08Z"
+  - apiVersion: argoproj.io/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .: {}
+          v:"resources-finalizer.argocd.argoproj.io/foreground": {}
+      f:spec:
+        .: {}
+        f:destination:
+          .: {}
+          f:server: {}
+        f:project: {}
+        f:source:
+          .: {}
+          f:path: {}
+          f:repoURL: {}
+          f:targetRevision: {}
+        f:syncPolicy: {}
+      f:status:
+        .: {}
+        f:health:
+          .: {}
+          f:status: {}
+        f:summary: {}
+        f:sync:
+          .: {}
+          f:comparedTo:
+            .: {}
+            f:destination:
+              .: {}
+              f:server: {}
+            f:source:
+              .: {}
+              f:path: {}
+              f:repoURL: {}
+              f:targetRevision: {}
+    manager: argocd-server
+    operation: Update
+  name: demoapp
+  namespace: appdemo
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: release/
+    repoURL: https://github.com/David-Igou/microservices-demo.git
+    targetRevision: HEAD
+  syncPolicy: {}
