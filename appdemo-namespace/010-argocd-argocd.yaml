@@ -1,139 +1,42 @@
-apiVersion: v1
-items:
-- apiVersion: argoproj.io/v1alpha1
-  kind: ArgoCD
-  metadata:
-    creationTimestamp: "2021-05-26T14:07:45Z"
-    finalizers:
-    - argoproj.io/finalizer
-    generation: 2
-    managedFields:
-    - apiVersion: argoproj.io/v1alpha1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:spec:
-          .: {}
-          f:server:
-            .: {}
-            f:route:
-              .: {}
-              f:enabled: {}
-      manager: Mozilla
-      operation: Update
-      time: "2021-05-26T14:07:45Z"
-    - apiVersion: argoproj.io/v1alpha1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:metadata:
-          f:finalizers: {}
-        f:spec:
-          f:controller:
-            .: {}
-            f:processors: {}
-          f:dex: {}
-          f:grafana:
-            .: {}
-            f:enabled: {}
-            f:ingress:
-              .: {}
-              f:enabled: {}
-            f:route:
-              .: {}
-              f:enabled: {}
-          f:ha:
-            .: {}
-            f:enabled: {}
-          f:initialSSHKnownHosts: {}
-          f:prometheus:
-            .: {}
-            f:enabled: {}
-            f:ingress:
-              .: {}
-              f:enabled: {}
-            f:route:
-              .: {}
-              f:enabled: {}
-          f:rbac: {}
-          f:redis: {}
-          f:repo: {}
-          f:server:
-            f:autoscale:
-              .: {}
-              f:enabled: {}
-            f:grpc:
-              .: {}
-              f:ingress:
-                .: {}
-                f:enabled: {}
-            f:ingress:
-              .: {}
-              f:enabled: {}
-            f:service:
-              .: {}
-              f:type: {}
-          f:tls:
-            .: {}
-            f:ca: {}
-        f:status:
-          .: {}
-          f:applicationController: {}
-          f:dex: {}
-          f:phase: {}
-          f:redis: {}
-          f:repo: {}
-          f:server: {}
-      manager: gitops-operator
-      operation: Update
-      time: "2021-05-26T14:07:45Z"
-    name: argocd
-    namespace: appdemo
-    resourceVersion: "36441"
-    selfLink: /apis/argoproj.io/v1alpha1/namespaces/appdemo/argocds/argocd
-    uid: 80b3ac60-3900-49d7-8dbb-a8e08038fb51
-  spec:
-    controller:
-      processors: {}
-    dex: {}
-    grafana:
-      enabled: false
-      ingress:
-        enabled: false
-      route:
-        enabled: false
-    ha:
-      enabled: false
-    initialSSHKnownHosts: {}
-    prometheus:
-      enabled: false
-      ingress:
-        enabled: false
-      route:
-        enabled: false
-    rbac: {}
-    redis: {}
-    repo: {}
-    server:
-      autoscale:
-        enabled: false
-      grpc:
-        ingress:
-          enabled: false
-      ingress:
-        enabled: false
-      route:
-        enabled: true
-      service:
-        type: ""
-    tls:
-      ca: {}
-  status:
-    applicationController: Running
-    dex: Unknown
-    phase: Available
-    redis: Running
-    repo: Running
-    server: Running
-kind: List
+kind: ArgoCD
 metadata:
-  resourceVersion: ""
-  selfLink: ""
+  finalizers:
+  - argoproj.io/finalizer
+  name: argocd
+  namespace: appdemo
+spec:
+  controller:
+    processors: {}
+  dex: {}
+  grafana:
+    enabled: false
+    ingress:
+      enabled: false
+    route:
+      enabled: false
+  ha:
+    enabled: false
+  initialSSHKnownHosts: {}
+  prometheus:
+    enabled: false
+    ingress:
+      enabled: false
+    route:
+      enabled: false
+  rbac: {}
+  redis: {}
+  repo: {}
+  server:
+    autoscale:
+      enabled: false
+    grpc:
+      ingress:
+        enabled: false
+    ingress:
+      enabled: false
+    route:
+      enabled: true
+    service:
+      type: ""
+  tls:
+    ca: {}
