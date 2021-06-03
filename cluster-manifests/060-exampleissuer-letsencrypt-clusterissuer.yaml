@@ -1,15 +1,14 @@
 apiVersion: cert-manager.io/v1alpha3
-kind: Issuer
+kind: ClusterIssuer
 metadata:
-  name: exampleissuer-letsencrypt-staging
-  namespace: appdemo
+  name: exampleissuer-letsencrypt
 spec:
   acme:
     # You must replace this email address with your own.
     # Let's Encrypt will use this to contact you about expiring
     # certificates, and issues related to your account.
     email: igou@redhat.com
-    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       # Secret resource used to store the account's private key.
       name: example-issuer-account-key
